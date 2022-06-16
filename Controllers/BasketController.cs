@@ -22,8 +22,8 @@ namespace ÜrünYönetimi.Controllers
             _distributedcache = distributedcache;
             this.productManager = productManager;
         }
-        [HttpPost("SetCache")]
-        public async Task<Product> Set(string key, string productKey)
+        [HttpPost("AddToCart")]
+        public async Task<Product> AddToCart(string key, string productKey)
         {
             var product = productManager.GetById(productKey);
 
@@ -53,8 +53,8 @@ namespace ÜrünYönetimi.Controllers
             return product;
         }
 
-        [HttpPost("GetBasket")]
-        public async Task<IEnumerable<Product>> Get(string key)
+        [HttpPost("GetCart")]
+        public async Task<IEnumerable<Product>> GetCart(string key)
         {
 
             IEnumerable<Product> products;
@@ -72,8 +72,8 @@ namespace ÜrünYönetimi.Controllers
         }
 
 
-        [HttpPost("DeleteToBasket")]
-        public async void DeleteToBasket(string key, string productKey)
+        [HttpPost("RemoveFromCart")]
+        public async void RemoveFromCart(string key, string productKey)
         {
             var cacheKey = key;
 
