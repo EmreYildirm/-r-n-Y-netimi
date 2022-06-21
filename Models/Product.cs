@@ -8,7 +8,7 @@ namespace ÜrünYönetimi.Models
         [BsonRepresentation(BsonType.ObjectId)]
         [BsonId]
         [BsonElement(Order = 0)]
-        public string Id { get; }
+        public string Id { get; set; }
         [BsonElement("Name")]
         public string Name { get; set; }
         [BsonElement("Price")]
